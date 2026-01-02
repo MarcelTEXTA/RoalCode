@@ -1,0 +1,138 @@
+// Exemple complet RoalCode
+
+// ===== Variables typées =====
+int a = 10
+float b = 2.25
+string text = "Texte à imprimer"
+bool flag = true
+
+console.print("Initialisation :", text + " ", string(a), " et ", string(b))
+
+// ===== Liste et dictionnaire =====
+int[] numbers = [1, 2, 3, 4]
+string[] cities = ["Lyon", "Paris", "Marseille"]
+map<string,int> ages = {"Alice":20, "Bob":25}
+
+console.print("Premier nombre de la liste :", string(numbers[0]))
+console.print("Age de Bob :", string(ages["Bob"]))
+
+// ===== Saisie utilisateur =====
+int nbr = console.scan("Entrez un nombre : ")
+
+// ===== Conditions =====
+if (nbr > 0) {
+    console.print("Votre nombre est positif")
+} else if (nbr == 0) {
+    console.print("Votre nombre = 0")
+} else {
+    console.print("Votre nombre est négatif")
+}
+
+// ===== Boucles =====
+int sum = 0
+for (int i = 0; i < 5; i = i + 1) {
+    console.print("i =", string(i))
+    sum = sum + i
+}
+console.print("Somme des 0 à 4 :", string(sum))
+
+// ===== Fonctions =====
+int square(int x) {
+    return x * x
+}
+console.print("Carré de 5 :", string(square(5)))
+
+// ===== Classe et objet =====
+public class Person {
+    string name
+    int age
+
+    void greet() {
+        console.print("Bonjour, je suis " + name + " et j'ai " + string(age) + " ans.")
+    }
+}
+
+private class animal : Person { // Hérité de Person
+    public string species
+
+    public void info() {
+        console.print("Je suis un " + species + " nommé " + name)
+    }
+}
+
+Person p = new Person()
+p.name = "Alice"
+p.age = 20
+p.greet()
+
+// ===== Boucle sur liste =====
+for each city in cities {
+    console.print("Ville :", city)
+}
+
+// ===== Dictionnaire =====
+for each key in ["Alice", "Bob"] {
+    console.print(key + " a " + string(ages[key]) + " ans")
+}
+
+// ===== Booléens et logique =====
+if (flag and (nbr > 5)) {
+    console.print("Le flag est vrai et nbr > 5")
+}
+
+// ===== Utilisation de string() et concaténation =====
+console.print("Concaténation :", string(a) + "-" + string(b) + "-" + text)
+
+
+// ===== Importation de module =====
+
+import module
+from module import util
+
+/*
+    Listes des modules disponibles :
+    - math : pour les fonctions mathématiques avancées
+    - string_utils : pour les manipulations de chaînes de caractères
+    - file_io : pour la gestion des fichiers
+    - network : pour les opérations réseau
+    - sys : pour les interactions système
+    - os : pour les opérations sur le système d'exploitation
+    - time : pour la gestion du temps et des dates
+    - random : pour la génération de nombres aléatoires
+    - winUI : pour les interfaces graphiques sous Windows
+    - scoreedit : pour écrire des partitions TEXTA score edit avec RoalCode
+    - console : pour les entrées/sorties console (pas besoin d'importer, inclus par défaut)
+    - future : pour les fonctionnalités expérimentales
+*/
+
+
+// ===== Gestion des erreurs =====
+
+try {
+    int result = 10 / nbr
+    console.print("Résultat de 10 /", string(nbr), "=", string(result))
+} catch (DivisionByZeroError e) {
+    console.print("Erreur : Division par zéro !")
+} catch (Exception e) {
+    console.print("Erreur inattendue :", e.message)
+} finally {
+    console.print("Fin du bloc try-catch.")
+}
+
+
+// ===== Chaines multilignes =====
+
+string multiLineText = """Ceci est un texte
+sur plusieurs lignes.
+Il conserve les sauts de ligne et les espaces."""
+
+
+console.print("Texte multilignes :\n" + multiLineText)
+
+
+// ===== Commentaires =====
+// Ceci est un commentaire sur une ligne
+/*
+    Ceci est un commentaire
+    sur plusieurs lignes
+*/

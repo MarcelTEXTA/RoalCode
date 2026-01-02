@@ -1,0 +1,21 @@
+class math{
+    function add(int a, int b) {
+        return a + b
+    }
+    function subtract(int a, int b) {
+        return a - b
+    }
+    function multiply(int a, int b) {
+        return a * b
+    }
+    function divide(int a, int b) {
+        if (b == 0) {
+            console.print("Erreur : Division par zéro")
+            return 0
+        }
+        return a / b
+    }
+    function square(int a) {
+        return a * a
+    }
+}
