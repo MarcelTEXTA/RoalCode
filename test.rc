@@ -1,0 +1,6 @@
+// file to test various features for RoalCode
+
+int a = 10
+int b = 5
+a = a + b
+print(a)
