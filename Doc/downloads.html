@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>RoalCode — Accueil</title>
+    <title>RoalCode — Téléchargement</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -68,37 +68,36 @@
         }
 
         h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
+            font-size: 36px;
+            margin-bottom: 20px;
         }
 
         p {
             color: var(--muted);
             line-height: 1.7;
-            font-size: 16px;
         }
 
-        .cta {
-            margin-top: 40px;
+        .download-box {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--panel);
         }
 
-        .cta a {
+        .download-box h2 {
+            margin-top: 0;
+        }
+
+        .download-box a {
             display: inline-block;
-            margin-right: 15px;
-            padding: 12px 20px;
+            margin-top: 10px;
+            padding: 10px 16px;
+            background: var(--accent);
+            color: #000;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
-        }
-
-        .primary {
-            background: var(--accent);
-            color: #000;
-        }
-
-        .secondary {
-            border: 1px solid var(--border);
-            color: var(--text);
         }
 
         footer {
@@ -115,27 +114,26 @@
 <header>
     <div class="logo">RoalCode</div>
     <nav>
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="docs.html">Docs</a>
-        <a href="downloads.html">Download</a>
+        <a href="downloads.html" class="active">Download</a>
     </nav>
 </header>
 
 <main>
-    <h1>RoalCode</h1>
-    <p>
-        RoalCode est un langage de programmation interprété, typé statiquement et orienté performance,
-        conçu pour le développement d’applications lourdes, professionnelles et maintenables.
-    </p>
+    <h1>Télécharger RoalCode</h1>
 
     <p>
-        Il combine une syntaxe claire, une programmation orientée objet complète
-        et une gestion mémoire avancée via <code>memoRoal</code>.
+        L’interpréteur RoalCode est actuellement en développement actif.
+        Les premières versions publiques seront bientôt disponibles.
     </p>
 
-    <div class="cta">
-        <a href="docs.html" class="primary">Lire la documentation</a>
-        <a href="downloads.html" class="secondary">Télécharger</a>
+    <div class="download-box">
+        <h2>Interpréteur RoalCode</h2>
+        <p>Version : <strong>Preview</strong></p>
+        <p>Systèmes supportés : Windows (Linux à venir)</p>
+
+        <a href="#">Télécharger (bientôt)</a>
     </div>
 </main>
 

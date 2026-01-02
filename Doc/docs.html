@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>RoalCode Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg: #0f1117;
+            --panel: #161a23;
+            --text: #e6e6eb;
+            --muted: #9aa0b3;
+            --accent: #4da6ff;
+            --code-bg: #1c2030;
+            --border: #262b3d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* ===== Header ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-weight: 600;
+            color: var(--accent);
+            margin-right: 40px;
+        }
+
+        header nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+        header nav a.active {
+            color: var(--text);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 4px;
+        }
+
+        header nav a:hover {
+            color: var(--text);
+        }
+
+        /* ===== Layout ===== */
+        .layout {
+            display: flex;
+            margin-top: 56px;
+        }
+
+        /* Sidebar */
+        aside {
+            width: 260px;
+            background: var(--panel);
+            border-right: 1px solid var(--border);
+            padding: 20px;
+            position: fixed;
+            top: 56px;
+            bottom: 0;
+            overflow-y: auto;
+        }
+
+        aside h2 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        aside a {
+            display: block;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+
+        aside a:hover {
+            color: var(--text);
+        }
+
+        /* Main content */
+        main {
+            margin-left: 260px;
+            padding: 40px;
+            max-width: 1000px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+        p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        /* Code blocks */
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            padding: 16px;
+            overflow-x: auto;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        code {
+            color: #cdd6f4;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            margin-left: 260px;
+            padding: 30px 40px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">RoalCode</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="docs.html" class="active">Docs</a>
+        <a href="downloads.html">Download</a>
+    </nav>
+</header>
+
+<div class="layout">
+
+<aside>
+    <h2>Documentation</h2>
+    <a href="#intro">Introduction</a>
+    <a href="#features">Caractéristiques</a>
+    <a href="#syntax">Syntaxe</a>
+    <a href="#types">Types</a>
+    <a href="#structures">Structures</a>
+    <a href="#conditions">Conditions</a>
+    <a href="#loops">Boucles</a>
+    <a href="#functions">Fonctions</a>
+    <a href="#oop">POO</a>
+    <a href="#errors">Erreurs</a>
+    <a href="#modules">Modules</a>
+</aside>
+
+<main>
+
+<section id="intro">
+    <h1>Documentation RoalCode</h1>
+    <p>
+        RoalCode est un langage de programmation interprété, typé statiquement et orienté performance,
+        conçu pour le développement d’applications lourdes, professionnelles et maintenables.
+    </p>
+    <p>
+        Il privilégie la lisibilité du code, une gestion mémoire explicite et une programmation orientée objet moderne.
+    </p>
+</section>
+
+<section id="features">
+    <h2>Caractéristiques</h2>
+    <ul>
+        <li>Langage interprété</li>
+        <li>Typage statique obligatoire</li>
+        <li>Gestion mémoire avancée via <code>memoRoal</code></li>
+        <li>Programmation orientée objet complète</li>
+        <li>Exceptions natives</li>
+        <li>Système de modules extensible</li>
+        <li>Conçu pour des applications lourdes</li>
+    </ul>
+</section>
+
+<section id="syntax">
+    <h2>Syntaxe générale</h2>
+    <p>
+        La syntaxe de RoalCode est volontairement explicite et proche de C#/Java,
+        tout en supprimant les éléments inutiles pour améliorer la lisibilité.
+    </p>
+
+    <pre><code>// Déclarations
+int a = 10
+float b = 2.5
+string message = "Hello RoalCode"
+bool active = true</code></pre>
+</section>
+
+<section id="types">
+    <h2>Types primitifs</h2>
+    <ul>
+        <li><code>int</code> — nombres entiers</li>
+        <li><code>float</code> — nombres décimaux</li>
+        <li><code>string</code> — chaînes de caractères</li>
+        <li><code>bool</code> — valeurs booléennes</li>
+        <li><code>void</code> — absence de valeur de retour</li>
+    </ul>
+</section>
+
+<section id="structures">
+    <h2>Structures de données</h2>
+
+    <h3>Listes</h3>
+    <p>Les listes sont typées et indexées à partir de 0.</p>
+    <pre><code>int[] numbers = [1, 2, 3, 4]
+string[] cities = ["Paris", "Lyon"]</code></pre>
+
+    <h3>Dictionnaires</h3>
+    <pre><code>map&lt;string,int&gt; ages = {
+    "Alice": 20,
+    "Bob": 25
+}</code></pre>
+</section>
+
+<section id="conditions">
+    <h2>Conditions</h2>
+    <p>RoalCode utilise des opérateurs logiques explicites.</p>
+
+    <pre><code>if (value > 0) {
+    console.print("Positif")
+} else if (value == 0) {
+    console.print("Zéro")
+} else {
+    console.print("Négatif")
+}</code></pre>
+
+    <p>Opérateurs logiques :</p>
+    <ul>
+        <li><code>and</code></li>
+        <li><code>or</code></li>
+        <li><code>not</code></li>
+    </ul>
+</section>
+
+<section id="loops">
+    <h2>Boucles</h2>
+
+    <h3>Boucle for</h3>
+    <pre><code>for (int i = 0; i < 5; i = i + 1) {
+    console.print(i)
+}</code></pre>
+
+    <h3>Boucle for each</h3>
+    <pre><code>for each city in cities {
+    console.print(city)
+}</code></pre>
+</section>
+
+<section id="functions">
+    <h2>Fonctions</h2>
+    <p>
+        Les fonctions possèdent un type de retour obligatoire.
+    </p>
+
+    <pre><code>int square(int x) {
+    return x * x
+}</code></pre>
+
+    <pre><code>void greet(string name) {
+    console.print("Bonjour " + name)
+}</code></pre>
+</section>
+
+<section id="oop">
+    <h2>Programmation orientée objet</h2>
+
+    <h3>Déclaration de classe</h3>
+    <pre><code>public class Person {
+    string name
+    int age
+
+    void greet() {
+        console.print("Bonjour, je suis " + name)
+    }
+}</code></pre>
+
+    <h3>Héritage</h3>
+    <pre><code>private class Animal : Person {
+    string species
+}</code></pre>
+
+    <h3>Création d’objet</h3>
+    <pre><code>Person p = new Person()
+p.name = "Alice"
+p.age = 20
+p.greet()</code></pre>
+</section>
+
+<section id="errors">
+    <h2>Gestion des erreurs</h2>
+    <p>
+        RoalCode dispose d’un système d’exceptions typées.
+    </p>
+
+    <pre><code>try {
+    int result = 10 / value
+} catch (DivisionByZeroError e) {
+    console.print("Division par zéro")
+} catch (Exception e) {
+    console.print(e.message)
+} finally {
+    console.print("Fin du traitement")
+}</code></pre>
+</section>
+
+<section id="modules">
+    <h2>Modules</h2>
+    <p>RoalCode inclut un système de modules natif.</p>
+
+    <ul>
+        <li><code>console</code> (par défaut)</li>
+        <li><code>math</code></li>
+        <li><code>string_utils</code></li>
+        <li><code>file_io</code></li>
+        <li><code>network</code></li>
+        <li><code>sys</code>, <code>os</code></li>
+        <li><code>time</code></li>
+        <li><code>random</code></li>
+        <li><code>winUI</code></li>
+        <li><code>memoRoal</code></li>
+        <li><code>scoreedit</code></li>
+        <li><code>future</code></li>
+    </ul>
+
+    <pre><code>import math
+from file_io import File</code></pre>
+</section>
+
+<section id="multiline">
+    <h2>Chaînes multilignes</h2>
+    <pre><code>string text = """Ceci est un texte
+sur plusieurs lignes
+conservé tel quel"""</code></pre>
+</section>
+
+<section id="comments">
+    <h2>Commentaires</h2>
+    <pre><code>// Commentaire simple
+
+/*
+   Commentaire
+   multilignes
+*/</code></pre>
+</section>
+
+</main>
+
+</div>
+
+<footer>
+    © 2026 RoalCode — Simple à lire, puissant à exécuter.
+</footer>
+
+</body>
+</html>
