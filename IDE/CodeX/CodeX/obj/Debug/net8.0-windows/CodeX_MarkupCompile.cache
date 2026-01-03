@@ -1,5 +1,5 @@
 ﻿CodeX
-
+1.0.0.0
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 C:\Users\Family\projects\RoalCode\IDE\CodeX\CodeX\App.xaml
 11407045341
 
-4-917199984
+6606589243
 208336389346
 MainWindow.xaml;
 
-False
+True
 

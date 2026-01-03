@@ -1,0 +1,27 @@
+{
+  "name": "roalcode",
+  "displayName": "RoalCode",
+  "publisher": "MarcelTEXTA",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "roalcode",
+        "aliases": ["RoalCode", "roalcode"],
+        "extensions": [".rc"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "roalcode",
+        "scopeName": "source.roalcode",
+        "path": "./syntaxes/roalcode.tmLanguage.json"
+      }
+    ]
+  }
+}

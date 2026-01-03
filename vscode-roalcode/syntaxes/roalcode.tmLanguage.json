@@ -1,0 +1,61 @@
+{
+    "name": "RoalCode",
+    "scopeName": "source.roalcode",
+    "patterns": [
+        {
+            "name": "comment.line.double-slash.roalcode",
+            "match": "//.*$"
+        },
+        {
+            "name": "comment.block.roalcode",
+            "begin": "/\\*",
+            "end": "\\*/"
+        },
+        {
+            "name": "string.quoted.double.roalcode",
+            "begin": "\"",
+            "end": "\""
+        },
+        {
+            "name": "string.quoted.single.roalcode",
+            "begin": "'",
+            "end": "'"
+        },
+        {
+            "name": "constant.numeric.roalcode",
+            "match": "\\b\\d+(\\.\\d+)?\\b"
+        },
+        {
+            "name": "keyword.control.roalcode",
+            "match": "\\b(if|else|for|each|in|while|return|import|from|try|catch|finally|break|continue|new)\\b"
+        },
+        {
+            "name": "storage.type.roalcode",
+            "match": "\\b(int|float|string|bool|void|map)\\b"
+        },
+        {
+            "name": "storage.modifier.roalcode",
+            "match": "\\b(public|private|protected)\\b"
+        },
+        {
+            "name": "constant.language.boolean.roalcode",
+            "match": "\\b(true|false)\\b"
+        },
+        {
+            "name": "entity.name.class.roalcode",
+            "match": "\\b(class)\\b"
+        },
+        {
+            "name": "support.function.roalcode",
+            "match": "\\b(console\\.print|console\\.scan|string)\\b"
+        },
+        {
+            "name": "keyword.operator.roalcode",
+            "match": "(<=|>=|==|!=|&&|\\|\\||[+\\-*/=<>&|!])"
+        },
+        {
+            "name": "invalid.deprecated.roalcode",
+            "match": "\\b(DivisionByZeroError|Exception)\\b"
+        }
+    ]
+}
