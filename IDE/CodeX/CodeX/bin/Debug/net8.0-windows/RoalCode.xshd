@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyntaxDefinition name="RoalCode"
+    xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+
+  <!-- ===== Colors ===== -->
+  <Color name="Keyword" foreground="#4DA6FF"/>
+  <Color name="Type" foreground="#4EC9B0"/>
+  <Color name="Class" foreground="#7FD88F"/>
+  <Color name="Function" foreground="#DCDCAA"/>
+  <Color name="Boolean" foreground="#569CD6"/>
+  <Color name="Number" foreground="#AE81FF"/>
+  <Color name="String" foreground="#E6DB74"/>
+  <Color name="Comment" foreground="#6A9955"/>
+  <Color name="Operator" foreground="#D4D4D4"/>
+  <Color name="Modifier" foreground="#9CDCFE"/>
+  <Color name="Exception" foreground="#F44747"/>
+
+  <RuleSet>
+
+    <!-- ===== Comments ===== -->
+    <Span color="Comment" begin="//" end="\n"/>
+    <Span color="Comment" begin="/*" end="*/" multiline="true"/>
+
+    <!-- ===== Strings ===== -->
+    <Span color="String" begin="&quot;&quot;&quot;" end="&quot;&quot;&quot;" multiline="true"/>
+    <Span color="String" begin="&quot;" end="&quot;"/>
+    <Span color="String" begin="'" end="'"/>
+
+    <!-- ===== Numbers ===== -->
+    <Rule color="Number">\b\d+(\.\d+)?\b</Rule>
+
+    <!-- ===== Booleans ===== -->
+    <Keywords color="Boolean">
+      <Word>true</Word>
+      <Word>false</Word>
+    </Keywords>
+
+    <!-- ===== Modifiers ===== -->
+    <Keywords color="Modifier">
+      <Word>public</Word>
+      <Word>private</Word>
+      <Word>protected</Word>
+    </Keywords>
+
+    <!-- ===== Types ===== -->
+    <Keywords color="Type">
+      <Word>int</Word>
+      <Word>float</Word>
+      <Word>string</Word>
+      <Word>bool</Word>
+      <Word>void</Word>
+      <Word>map</Word>
+    </Keywords>
+
+    <!-- ===== Classes ===== -->
+    <Keywords color="Class">
+      <Word>class</Word>
+    </Keywords>
+
+    <!-- ===== Keywords ===== -->
+    <Keywords color="Keyword">
+      <Word>if</Word>
+      <Word>else</Word>
+      <Word>for</Word>
+      <Word>each</Word>
+      <Word>in</Word>
+      <Word>while</Word>
+      <Word>return</Word>
+      <Word>import</Word>
+      <Word>from</Word>
+      <Word>try</Word>
+      <Word>catch</Word>
+      <Word>finally</Word>
+      <Word>break</Word>
+      <Word>continue</Word>
+      <Word>new</Word>
+    </Keywords>
+
+    <!-- ===== Functions ===== -->
+    <Keywords color="Function">
+      <Word>string</Word>
+    </Keywords>
+
+    <Rule color="Function">\bconsole\.(print|scan)\b</Rule>
+
+    <!-- ===== Exceptions ===== -->
+    <Keywords color="Exception">
+      <Word>DivisionByZeroError</Word>
+      <Word>Exception</Word>
+    </Keywords>
+
+    <!-- ===== Operators (XML SAFE) ===== -->
+    <Rule color="Operator">(&lt;=|&gt;=|==|!=)</Rule>
+    <Rule color="Operator">(&amp;&amp;|\|\|)</Rule>
+    <Rule color="Operator">[\+\-\*/=&lt;&gt;]</Rule>
+
+  </RuleSet>
+</SyntaxDefinition>

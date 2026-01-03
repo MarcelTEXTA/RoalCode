@@ -15,7 +15,9 @@
             --border: #262b3d;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
@@ -23,6 +25,8 @@
             background: var(--bg);
             color: var(--text);
         }
+
+        /* ---------------- HEADER ---------------- */
 
         header {
             position: fixed;
@@ -38,7 +42,7 @@
             z-index: 1000;
         }
 
-        header .logo {
+        .logo {
             font-weight: 600;
             color: var(--accent);
             margin-right: 40px;
@@ -61,10 +65,29 @@
             color: var(--text);
         }
 
+        /* ---------------- ANIMATIONS ---------------- */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---------------- MAIN ---------------- */
+
         main {
             padding: 120px 40px 80px;
             max-width: 900px;
             margin: auto;
+        }
+
+        .hero {
+            animation: fadeUp 0.8s ease-out;
         }
 
         h1 {
@@ -72,14 +95,15 @@
             margin-bottom: 10px;
         }
 
-        p {
+        .subtitle {
             color: var(--muted);
-            line-height: 1.7;
-            font-size: 16px;
+            font-size: 17px;
+            max-width: 720px;
+            line-height: 1.6;
         }
 
         .cta {
-            margin-top: 40px;
+            margin-top: 35px;
         }
 
         .cta a {
@@ -89,6 +113,7 @@
             border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 14px;
         }
 
         .primary {
@@ -100,6 +125,57 @@
             border: 1px solid var(--border);
             color: var(--text);
         }
+
+        /* ---------------- SECTIONS ---------------- */
+
+        .block {
+            margin-top: 90px;
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 16px;
+            max-width: 780px;
+        }
+
+        /* ---------------- FEATURES ---------------- */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .feature p {
+            font-size: 14px;
+        }
+
+        /* ---------------- FOOTER ---------------- */
 
         footer {
             padding: 30px 40px;
@@ -122,25 +198,69 @@
 </header>
 
 <main>
-    <h1>RoalCode</h1>
-    <p>
-        RoalCode est un langage de programmation interprété, typé statiquement et orienté performance,
-        conçu pour le développement d’applications lourdes, professionnelles et maintenables.
-    </p>
 
-    <p>
-        Il combine une syntaxe claire, une programmation orientée objet complète
-        et une gestion mémoire avancée via <code>memoRoal</code>.
-    </p>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>RoalCode</h1>
+        <p class="subtitle">
+            Un langage de programmation moderne, interprété et statiquement typé,
+            conçu pour la performance, la stabilité et les applications professionnelles.
+        </p>
 
-    <div class="cta">
-        <a href="docs.html" class="primary">Lire la documentation</a>
-        <a href="downloads.html" class="secondary">Télécharger</a>
-    </div>
+        <div class="cta">
+            <a href="docs.html" class="primary">Lire la documentation</a>
+            <a href="downloads.html" class="secondary">Télécharger</a>
+        </div>
+    </section>
+
+    <!-- PRESENTATION -->
+    <section class="block">
+        <h2>Présentation</h2>
+        <p>
+            RoalCode est un langage de programmation pensé pour les développeurs
+            qui recherchent une syntaxe claire sans sacrifier le contrôle bas niveau.
+        </p>
+        <p>
+            Il s’adresse aux projets complexes, aux outils professionnels
+            et aux applications nécessitant des performances constantes.
+        </p>
+    </section>
+
+    <!-- PRINCIPES -->
+    <section class="block">
+        <h2>Principes clés</h2>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Typage statique strict</h3>
+                <p>
+                    Les types sont vérifiés à l’avance pour réduire
+                    drastiquement les erreurs à l’exécution.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Gestion mémoire avancée</h3>
+                <p>
+                    Le module <code>memoRoal</code> offre un contrôle précis
+                    de l’allocation et de la durée de vie.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Architecture maintenable</h3>
+                <p>
+                    Pensé pour les projets long terme avec une structure claire
+                    et une évolutivité maîtrisée.
+                </p>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <footer>
-    © 2026 RoalCode — Simple à lire, puissant à exécuter.
+    2026 RoalCode — Simple à lire, puissant à exécuter.
 </footer>
 
 </body>

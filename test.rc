@@ -1,6 +1,5 @@
-// file to test various features for RoalCode
-
-int a = 10
-int b = 5
-a = a + b
-print(a)
+int sum = 0
+for (int i = 0; i < 5; i = i + 1) {
+    sum = sum + i
+}
+console.print("Somme :", sum)

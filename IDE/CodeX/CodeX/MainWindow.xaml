@@ -1,0 +1,150 @@
+﻿<Window x:Class="CodeX.MainWindow"
+        xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodeX"
+        mc:Ignorable="d"
+        Title="CodeX IDE" Height="700" Width="1000">
+    <DockPanel>
+
+        <!-- Menu -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Fichier">
+                <MenuItem Header="Nouveau">
+                    <MenuItem Header="Projet" InputGestureText="Ctrl+Shift+N"/>
+                    <MenuItem Header="Fichier" InputGestureText="Ctrl+N"/>
+                </MenuItem>
+                <MenuItem Header="Ouvrir">
+                    <MenuItem Header="Projet" InputGestureText="Ctrl+Shift+O"/>
+                    <MenuItem Header="Espace de travail"/>
+                    <Separator/>
+                    <MenuItem Header="Fichier" InputGestureText="Ctrl+O"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Cloner le dépôt"/>
+                <MenuItem Header="Fenêtre de démarrage"/>
+                <Separator/>
+                <MenuItem Header="Fermer"/>
+                <MenuItem Header="Fermer le projet"/>
+                <Separator/>
+                <MenuItem Header="Enregistrer le fichier" InputGestureText="Ctrl+S"/>
+                <MenuItem Header="Enregistrer le fichier sous"/>
+                <MenuItem Header="Enregistrer tout" InputGestureText="Ctrl+Shift+S"/>
+                <Separator/>
+                <MenuItem Header="Fichiers récents"/>
+                <MenuItem Header="Projets récents"/>
+                <Separator/>
+                <MenuItem Header="Quitter" InputGestureText="Alt+F4"/>
+            </MenuItem>
+
+            <MenuItem Header="_Edition">
+                <MenuItem Header="Annuler" InputGestureText="Ctrl+Z"/>
+                <MenuItem Header="Rétablir" InputGestureText="Ctrl+Y"/>
+                <Separator/>
+                <MenuItem Header="Couper" InputGestureText="Ctrl+X"/>
+                <MenuItem Header="Copier" InputGestureText="Ctrl+C"/>
+                <MenuItem Header="Coller" InputGestureText="Ctrl+V"/>
+                <MenuItem Header="Historique du presse papier" InputGestureText="Ctrl+Shift+V"/>
+                <MenuItem Header="Dupliquer" InputGestureText="Ctrl+D"/>
+                <MenuItem Header="Supprimer" InputGestureText="Delete"/>
+                <Separator/>
+                <MenuItem Header="Tout sélectionner" InputGestureText="Ctrl+A"/>
+                <Separator/>
+                <MenuItem Header="Rechercher" InputGestureText="Ctrl+F"/>
+                <MenuItem Header="Remplacer" InputGestureText="Ctrl+H"/>
+                <MenuItem Header="Aller à la ligne" InputGestureText="Alt+G"/>
+            </MenuItem>
+
+            <MenuItem Header="_Affichage">
+                <MenuItem Header="Explorateur" IsCheckable="True"/>
+                <MenuItem Header="Modifications Git" IsCheckable="True"/>
+                <MenuItem Header="Dépôt Git" IsCheckable="True"/>
+                <MenuItem Header="Explorateurs des serveurs" IsCheckable="True"/>
+                <MenuItem Header="Explorateurs de tests" IsCheckable="True"/>
+                <Separator/>
+                <MenuItem Header="Liste d'erreurs" IsCheckable="True"/>
+                <MenuItem Header="Sortie" IsCheckable="True"/>
+                <MenuItem Header="Notifications" IsCheckable="True"/>
+                <MenuItem Header="Terminal" IsCheckable="True"/>
+                <Separator/>
+                <MenuItem Header="Barre d'outils">
+                    <MenuItem Header="Standard" IsCheckable="True"/>
+                    <MenuItem Header="Deboguer" IsCheckable="True"/>
+                    <MenuItem Header="Editeur de texte" IsCheckable="True"/>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="_Git">
+                <MenuItem Header="Commit"/>
+                <MenuItem Header="Push"/>
+                <MenuItem Header="Pull"/>
+                <MenuItem Header="Branches"/>
+            </MenuItem>
+
+            <MenuItem Header="_Projet"/>
+            <MenuItem Header="_Génération"/>
+            <MenuItem Header="_Déboguer"/>
+            <MenuItem Header="_Test"/>
+            <MenuItem Header="_Outils"/>
+            <MenuItem Header="_Terminal"/>
+            <MenuItem Header="_Extensions"/>
+            <MenuItem Header="_Fenêtre"/>
+            <MenuItem Header="_Aide"/>
+        </Menu>
+
+        <!-- Toolbar -->
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Content="New File"/>
+                <Button Content="Open"/>
+                <Button Content="Save"/>
+                <Separator/>
+                <Button Content="Annuler"/>
+                <Button Content="Refaire"/>
+                <Separator/>
+                <ComboBox IsEditable="False">
+                    <ComboBoxItem Content="Debug" IsSelected="True"/>
+                    <ComboBoxItem Content="Release"/>
+                </ComboBox>
+                <ComboBox IsEditable="False">
+                    <ComboBoxItem Content="Any CPU" IsSelected="True"/>
+                </ComboBox>
+                <Separator/>
+                
+            </ToolBar>
+        </ToolBarTray>
+
+        <!-- Main Content -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="5"/>
+                <!-- GridSplitter -->
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <!-- TabControl for multiple files -->
+            <TabControl Name="EditorTabs" Grid.Row="0">
+                <TabItem Header="Untitled.rc">
+                    <avalonedit:TextEditor
+                        Name="CodeEditor"
+                        FontFamily="Consolas"
+                        FontSize="14"
+                        ShowLineNumbers="True"
+                        HorizontalScrollBarVisibility="Auto"
+                        VerticalScrollBarVisibility="Auto"/>
+                </TabItem>
+            </TabControl>
+
+            <!-- GridSplitter -->
+            <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" ShowsPreview="True"/>
+
+            <!-- Console -->
+            <TextBox Name="ConsoleOutput" Grid.Row="2" FontFamily="Consolas" FontSize="14" IsReadOnly="True"
+                     VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
+                     TextWrapping="Wrap" Padding="5"/>
+        </Grid>
+    </DockPanel>
+</Window>
