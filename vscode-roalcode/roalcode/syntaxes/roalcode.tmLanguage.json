@@ -1,0 +1,63 @@
+{
+  "scopeName": "source.roalcode",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#functions" },
+    { "include": "#booleans" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "begin": "//", "end": "$", "name": "comment.line.roalcode" },
+        { "begin": "/\\*", "end": "\\*/", "name": "comment.block.roalcode" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        { "begin": "\"\"\"", "end": "\"\"\"", "name": "string.multiline.roalcode" },
+        { "begin": "\"", "end": "\"", "name": "string.quoted.double.roalcode" }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "match": "\\b\\d+(\\.\\d+)?\\b", "name": "constant.numeric.roalcode" }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(if|else|for|each|in|while|return|import|from|try|catch|finally|break|continue|new)\\b",
+          "name": "keyword.control.roalcode"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "match": "\\b(int|float|string|bool|void|map)\\b",
+          "name": "storage.type.roalcode"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "match": "\\bconsole\\.(print|scan)\\b",
+          "name": "support.function.roalcode"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "match": "\\b(true|false)\\b",
+          "name": "constant.language.boolean.roalcode"
+        }
+      ]
+    }
+  }
+}

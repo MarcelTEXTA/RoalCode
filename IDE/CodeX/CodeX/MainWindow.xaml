@@ -128,13 +128,13 @@
             <!-- TabControl for multiple files -->
             <TabControl Name="EditorTabs" Grid.Row="0">
                 <TabItem Header="Untitled.rc">
-                    <avalonedit:TextEditor
-                        Name="CodeEditor"
-                        FontFamily="Consolas"
-                        FontSize="14"
-                        ShowLineNumbers="True"
-                        HorizontalScrollBarVisibility="Auto"
-                        VerticalScrollBarVisibility="Auto"/>
+                    <avalonedit:TextEditor Name="CodeEditor"
+                               ShowLineNumbers="True"
+                               FontFamily="Consolas"
+                               FontSize="14"
+                               SyntaxHighlighting="RoalCode"
+                               VerticalScrollBarVisibility="Auto"
+                               HorizontalScrollBarVisibility="Auto"/>
                 </TabItem>
             </TabControl>
 
@@ -144,7 +144,7 @@
             <!-- Console -->
             <TextBox Name="ConsoleOutput" Grid.Row="2" FontFamily="Consolas" FontSize="14" IsReadOnly="True"
                      VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
-                     TextWrapping="Wrap" Padding="5"/>
+                     TextWrapping="Wrap"/>
         </Grid>
     </DockPanel>
 </Window>
